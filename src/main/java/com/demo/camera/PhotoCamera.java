@@ -1,5 +1,7 @@
 package com.demo.camera;
 
+import java.util.concurrent.TimeUnit;
+
 public class PhotoCamera {
 
     private boolean cameraOn;
@@ -25,8 +27,9 @@ public class PhotoCamera {
         this.sensor.turnOff();
     }
 
-    public void pressButton() {
+    public void pressButton() throws InterruptedException {
         if (cameraOn == true) {
+            TimeUnit.SECONDS.sleep(5);
             card.write(sensor.read());
         }
     }
