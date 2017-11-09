@@ -3,32 +3,31 @@ package com.demo.camera;
 public class PhotoCamera {
 
     private boolean cameraOn;
-    ImageSensor powerSensor;
-    ImageSensor copyData;
-    Card writeData;
+    private ImageSensor sensor;
+    private Card card;
 
-    public PhotoCamera(ImageSensor powerSensor) {  //Dependency Injection (Wstrzykiwanie)
-        this.powerSensor = powerSensor;
+    public PhotoCamera(ImageSensor sensor) {  //Dependency Injection (Wstrzykiwanie)
+        this.sensor = sensor;
     }
 
-    public PhotoCamera(ImageSensor copyData, Card writeData) {
-        this.copyData = copyData;
-        this.writeData = writeData;
+    public PhotoCamera(ImageSensor sensor, Card card) {
+        this.sensor = sensor;
+        this.card = card;
     }
 
     public void turnOn() {
-        this.cameraOn =true;
-        this.powerSensor.turnOn();
+        this.cameraOn = true;
+        this.sensor.turnOn();
 
     }
     public void turnOff() {
-        this.cameraOn =false;
-        this.powerSensor.turnOff();
+        this.cameraOn = false;
+        this.sensor.turnOff();
     }
 
     public void pressButton() {
         if (cameraOn == true) {
-            this.writeData.write(this.copyData.read());
+            card.write(sensor.read());
         }
     }
 }
