@@ -54,10 +54,9 @@ public class PhotoCamera {
     }
 
     public void pressButton() {
-        if (powerButton == true) {
-            this.writeData = (Card) this.copyData;
+        if (cameraOn == true) {
+            this.writeData.write(this.copyData.read());
         }
     }
-
 }
 
