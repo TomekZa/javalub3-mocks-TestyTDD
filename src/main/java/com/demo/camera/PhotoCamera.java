@@ -1,9 +1,10 @@
 package com.demo.camera;
 
-public class PhotoCamera implements ImageSensor {
+public class PhotoCamera {
 
     private boolean powerButton;
     private boolean blinkButton;
+
 
     public PhotoCamera() {
         this(false, false);
@@ -29,11 +30,11 @@ public class PhotoCamera implements ImageSensor {
         return this.powerButton;
     }
 
-    @Override
+
     public void turnOn() {
-        // not implemented
+        this.powerButton=true;
+
     }
-    @Override
     public void turnOff() {
         // not implemented
     }
@@ -42,9 +43,5 @@ public class PhotoCamera implements ImageSensor {
         // not implemented
     }
 
-    @Override
-    public byte[] read() {
-        return new byte[0];
-    }
 }
 
