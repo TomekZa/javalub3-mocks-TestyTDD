@@ -31,4 +31,14 @@ class PhotoCameraSpec extends Specification {
         1 * powerSensor.turnOff()
     }
 
+    def "When  camera is off, press blink do nothing"() {
+        given:
+        PhotoCamera camera = new PhotoCamera(false, false)
+
+        when:
+        camera.getBlinkButton()
+
+        then:
+        0 * camera.pressButton()
+    }
 }

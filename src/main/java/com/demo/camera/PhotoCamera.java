@@ -2,7 +2,7 @@ package com.demo.camera;
 
 public class PhotoCamera {
 
-    private boolean powerButton;
+    private boolean cameraOn;
     private boolean blinkButton;
     ImageSensor powerSensor;
     ImageSensor copyData;
@@ -24,32 +24,32 @@ public class PhotoCamera {
 
     public PhotoCamera(boolean powerButton, boolean blinkButton) {
         this.blinkButton = blinkButton;
-        this.powerButton = powerButton;
+        this.cameraOn = powerButton;
     }
 
     public void setBlinkButton(boolean blinkButton) {
         this.blinkButton = blinkButton;
     }
 
-    public void setPowerButton(boolean powerButton) {
-        this.powerButton = powerButton;
+    public void setCameraOn(boolean cameraOn) {
+        this.cameraOn = cameraOn;
     }
 
     public boolean getBlinkButton(){
         return this.blinkButton;
     }
-    public boolean getPowerButton(){
-        return this.powerButton;
+    public boolean getCameraOn(){
+        return this.cameraOn;
     }
 
 
     public void turnOn() {
-        this.powerButton=true;
+        this.cameraOn =true;
         this.powerSensor.turnOn();
 
     }
     public void turnOff() {
-        this.powerButton=false;
+        this.cameraOn =false;
         this.powerSensor.turnOff();
     }
 
