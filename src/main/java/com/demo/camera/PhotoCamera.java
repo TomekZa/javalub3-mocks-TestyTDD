@@ -4,6 +4,8 @@ public class PhotoCamera {
 
     private boolean powerButton;
     private boolean blinkButton;
+    private boolean powerSensor;
+
 
     public PhotoCamera() {
         this(false, false);
@@ -20,6 +22,15 @@ public class PhotoCamera {
 
     public void setPowerButton(boolean powerButton) {
         this.powerButton = powerButton;
+    }
+    public boolean getPowerSensor(){
+        return this.powerSensor;
+    }
+    public boolean getBlinkButton(){
+        return this.blinkButton;
+    }
+    public boolean getPowerButton(){
+        return this.powerButton;
     }
 
 
