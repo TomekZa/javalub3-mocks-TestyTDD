@@ -28,6 +28,7 @@ class ExampleSpec extends Specification {
 
         void doAClientThing() {
             server.doAServerThing();
+            server.doAServerThing();
         }
     }
 
