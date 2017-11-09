@@ -20,7 +20,7 @@ class ExampleSpec extends Specification {
     // Put your implementation code under src/main/java
     class MyClient {
 
-        private final Server server;
+        private final Server server
 
         MyClient(Server server) {
             this.server = server
