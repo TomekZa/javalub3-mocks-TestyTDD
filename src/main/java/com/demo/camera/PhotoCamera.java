@@ -3,15 +3,9 @@ package com.demo.camera;
 public class PhotoCamera {
 
     private boolean cameraOn;
-    private boolean blinkButton;
     ImageSensor powerSensor;
     ImageSensor copyData;
     Card writeData;
-
-
-    public PhotoCamera() {
-        this(false, false);
-    }
 
     public PhotoCamera(ImageSensor powerSensor) {  //Dependency Injection (Wstrzykiwanie)
         this.powerSensor = powerSensor;
@@ -21,27 +15,6 @@ public class PhotoCamera {
         this.copyData = copyData;
         this.writeData = writeData;
     }
-
-    public PhotoCamera(boolean powerButton, boolean blinkButton) {
-        this.blinkButton = blinkButton;
-        this.cameraOn = powerButton;
-    }
-
-    public void setBlinkButton(boolean blinkButton) {
-        this.blinkButton = blinkButton;
-    }
-
-    public void setCameraOn(boolean cameraOn) {
-        this.cameraOn = cameraOn;
-    }
-
-    public boolean getBlinkButton(){
-        return this.blinkButton;
-    }
-    public boolean getCameraOn(){
-        return this.cameraOn;
-    }
-
 
     public void turnOn() {
         this.cameraOn =true;

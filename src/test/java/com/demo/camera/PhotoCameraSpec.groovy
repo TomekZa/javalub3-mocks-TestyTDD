@@ -46,7 +46,7 @@ class PhotoCameraSpec extends Specification {
         given:
         ImageSensor sensor = Mock(ImageSensor)
         Card card = Mock(Card)
-        PhotoCamera camera = new PhotoCamera(sensor,card)
+        PhotoCamera camera = new PhotoCamera(sensor, card)
 
         when:
         camera.pressButton()
