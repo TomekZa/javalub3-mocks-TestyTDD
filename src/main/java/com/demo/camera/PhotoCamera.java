@@ -5,6 +5,8 @@ public class PhotoCamera {
     private boolean cameraOn;
     private boolean blinkButton;
     ImageSensor powerSensor;
+    ImageSensor copyData;
+    Card writeData;
 
 
     public PhotoCamera() {
@@ -13,6 +15,11 @@ public class PhotoCamera {
 
     public PhotoCamera(ImageSensor powerSensor) {  //Dependency Injection (Wstrzykiwanie)
         this.powerSensor = powerSensor;
+    }
+
+    public PhotoCamera(ImageSensor copyData, Card writeData) {
+        this.copyData = copyData;
+        this.writeData = writeData;
     }
 
     public PhotoCamera(boolean powerButton, boolean blinkButton) {
@@ -47,8 +54,9 @@ public class PhotoCamera {
     }
 
     public void pressButton() {
-        // not implemented
+        if (cameraOn == true) {
+            this.writeData.write(this.copyData.read());
+        }
     }
-
 }
 
