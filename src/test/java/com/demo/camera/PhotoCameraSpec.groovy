@@ -33,12 +33,26 @@ class PhotoCameraSpec extends Specification {
 
     def "When  camera is off, press blink do nothing"() {
         given:
-        PhotoCamera camera = new PhotoCamera(false, false)
+        ImageSensor sensor = Mock(ImageSensor)
+        PhotoCamera camera = new PhotoCamera(sensor)
 
         when:
-        camera.getBlinkButton()
+        camera.pressButton()
 
         then:
-        0 * camera.pressButton()
+        0 * sensor.read()
+    }
+    def "When camera is on, press blink write a photo"() {
+        given:
+        ImageSensor sensor = Mock(ImageSensor)
+        Card card = Mock(Card)
+        PhotoCamera camera = new PhotoCamera(sensor,card)
+
+        when:
+        camera.pressButton()
+
+        then:
+        1 * sensor.read()
+        1 * card.write()
     }
 }
