@@ -11,7 +11,7 @@ public class PhotoCamera {
         this(false, false);
     }
 
-    public PhotoCamera(ImageSensor powerSensor) {
+    public PhotoCamera(ImageSensor powerSensor) {  //Dependency Injection (Wstrzykiwanie)
         this.powerSensor = powerSensor;
     }
 
@@ -42,7 +42,8 @@ public class PhotoCamera {
 
     }
     public void turnOff() {
-        // not implemented
+        this.powerButton=false;
+        this.powerSensor.turnOff();
     }
 
     public void pressButton() {
