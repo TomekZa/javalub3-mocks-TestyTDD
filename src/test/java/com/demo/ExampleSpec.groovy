@@ -23,15 +23,15 @@ class ExampleSpec extends Specification {
         private final Server server;
 
         MyClient(Server server) {
-            this.server = server;
+            this.server = server
         }
 
         void doAClientThing() {
-            server.doAServerThing();
+            server.doAServerThing()
         }
     }
 
     interface Server {
-        void doAServerThing();
+        void doAServerThing()
     }
 }
