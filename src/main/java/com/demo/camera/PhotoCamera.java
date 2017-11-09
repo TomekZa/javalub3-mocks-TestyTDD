@@ -8,11 +8,7 @@ public class PhotoCamera {
     private ImageSensor sensor;
     private Card card;
 
-    public PhotoCamera(ImageSensor sensor) {  //Dependency Injection (Wstrzykiwanie)
-        this.sensor = sensor;
-    }
-
-    public PhotoCamera(ImageSensor sensor, Card card) {
+    public PhotoCamera(ImageSensor sensor, Card card) { //Dependency Injection (Wstrzykiwanie)
         this.sensor = sensor;
         this.card = card;
     }
@@ -28,7 +24,7 @@ public class PhotoCamera {
     }
 
     public void pressButton() throws InterruptedException {
-        if (cameraOn == true) {
+        if (cameraOn) {
             TimeUnit.SECONDS.sleep(5);
             card.write(sensor.read());
         }

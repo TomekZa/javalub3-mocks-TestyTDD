@@ -9,7 +9,7 @@ class PhotoCameraSpec extends Specification {
     def "Should power up the sensor when camera is switched on"() {
         given:
         ImageSensor sensor = Mock(ImageSensor)
-        PhotoCamera camera = new PhotoCamera(sensor)
+        PhotoCamera camera = new PhotoCamera(sensor, null)
 
         when:
         camera.turnOn()
@@ -22,7 +22,7 @@ class PhotoCameraSpec extends Specification {
     def "Should power down the sensor when camera is switched off"() {
         given:
         ImageSensor sensor = Mock(ImageSensor)
-        PhotoCamera camera = new PhotoCamera(sensor)
+        PhotoCamera camera = new PhotoCamera(sensor, null)
 
         when:
         camera.turnOff()
@@ -34,7 +34,7 @@ class PhotoCameraSpec extends Specification {
     def "When camera is off, press blink do nothing"() {
         given:
         ImageSensor sensor = Mock(ImageSensor)
-        PhotoCamera camera = new PhotoCamera(sensor)
+        PhotoCamera camera = new PhotoCamera(sensor, null)
 
         when:
         camera.pressButton()
