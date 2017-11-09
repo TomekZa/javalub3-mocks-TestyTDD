@@ -15,7 +15,7 @@ class PhotoCameraSpec extends Specification {
         camera.turnOn()
 
         then:
-        powerSensor == true
+        camera.getPowerSensor() == true
     }
 
 
